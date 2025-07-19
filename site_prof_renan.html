@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Renan Palheta | Informática para Concursos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --azul-engenharia: #003366;
+      --cinza-claro: #f0f0f0;
+      --cinza-escuro: #2e2e2e;
+      --destaque: #007acc;
+      --branco: #ffffff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--cinza-claro);
+      color: var(--cinza-escuro);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: var(--azul-engenharia);
+      color: var(--branco);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: lightning 3s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes lightning {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    nav {
+      background-color: var(--destaque);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: var(--branco);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background-color: var(--azul-engenharia);
+      color: var(--branco);
+      text-align: center;
+      padding: 15px;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .logo {
+      width: 120px;
+      margin: 10px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo Engenharia da Computação" class="logo">
+      <h1>Prof. Renan Palheta</h1>
+      <p>Informática para Concursos Públicos</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#inicio"><i class="fas fa-home"></i> Início</a>
+    <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
+    <a href="#conteudos"><i class="fas fa-book"></i> Conteúdos</a>
+    <a href="#cursos"><i class="fas fa-video"></i> Cursos Online</a>
+    <a href="#pdfs"><i class="fas fa-file-pdf"></i> PDFs Básicos</a>
+    <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h2>Bem-vindo!</h2>
+      <p>Este é o seu portal de estudos em informática voltado para concursos públicos. Aqui você encontra conteúdos atualizados, resumos, vídeos e muito mais para te ajudar na sua aprovação!</p>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre o Professor</h2>
+      <p>Sou o Prof. Renan Palheta, especialista em informática para concursos. Tenho ajudado centenas de alunos a entenderem com clareza os principais temas cobrados em provas de concursos públicos.</p>
+    </section>
+
+    <section id="conteudos">
+      <h2>Conteúdos em Destaque</h2>
+      <ul>
+        <li>✅ Apostilas e PDFs gratuitos</li>
+        <li>✅ Resumos por assunto</li>
+        <li>✅ Questões comentadas</li>
+        <li>✅ Aulas em vídeo (em breve)</li>
+      </ul>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdEXEMPLO/viewform?embedded=true" title="Formulário de inscrição"></iframe>
+    </section>
+
+    <section id="cursos">
+      <h2>Cursos Online</h2>
+      <p>Em breve você poderá acessar meus cursos completos pela Udemy diretamente por aqui!</p>
+      <p>Enquanto isso, fique atento às atualizações e siga o Instagram para novidades.</p>
+    </section>
+
+    <section id="pdfs">
+      <h2>Informática Básica para Outros Cursos</h2>
+      <p>Estudantes de Administração, Enfermagem, Pedagogia e outras áreas também podem aprender os conceitos básicos de informática com esses materiais gratuitos:</p>
+      <ul>
+        <li><a href="pdfs/introducao-informatica.pdf" target="_blank">📘 Introdução à Informática</a></li>
+        <li><a href="pdfs/sistemas-operacionais-basico.pdf" target="_blank">📘 Noções de Sistemas Operacionais</a></li>
+        <li><a href="pdfs/editor-texto-planilha.pdf" target="_blank">📘 Word e Excel: Conceitos Básicos</a></li>
+        <li><a href="pdfs/navegadores-e-email.pdf" target="_blank">📘 Navegadores e E-mail</a></li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Fale Comigo</h2>
+      <p>Email: profrenanpalheta@gmail.com</p>
+      <p>Instagram: <a href="https://instagram.com/engrpalheta" target="_blank">@engrpalheta</a></p>
+      <p>WhatsApp: <a href="https://wa.me/5591999999999" target="_blank">Clique aqui para conversar</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Prof. Renan Palheta - Todos os direitos reservados</p>
+  </footer>
+
+  <a href="https://wa.me/5591999999999" class="whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>
