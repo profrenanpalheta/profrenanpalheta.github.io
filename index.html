@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prof. Renan Palheta | Informática para Concursos</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prof. Renan Palheta | Cursos e Conteúdos de Informática</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     :root {
       --azul-engenharia: #003366;
@@ -99,6 +100,11 @@
       padding: 15px;
     }
 
+    footer a {
+      color: var(--branco);
+      text-decoration: none;
+    }
+
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -133,7 +139,7 @@
 <body>
   <header>
     <div class="header-content">
-      <img src="logo_prof.png" alt="Logo Prof. Renan Palheta" class="logo">
+      <img src="logo_prof.png" alt="Logo Prof. Renan Palheta" class="logo" />
       <h1>Prof. Renan Palheta</h1>
       <p>Informática para Concursos Públicos</p>
     </div>
@@ -145,6 +151,8 @@
     <a href="#conteudos"><i class="fas fa-book"></i> Conteúdos</a>
     <a href="#cursos"><i class="fas fa-video"></i> Cursos Online</a>
     <a href="#pdfs"><i class="fas fa-file-pdf"></i> PDFs Básicos</a>
+    <a href="#nuvem"><i class="fas fa-cloud"></i> Nuvem</a>
+    <a href="#projetos"><i class="fas fa-code"></i> Projetos</a>
     <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
   </nav>
 
@@ -187,6 +195,26 @@
       </ul>
     </section>
 
+    <section id="nuvem">
+      <h2>Computação em Nuvem</h2>
+      <p>Conheça os principais conceitos de computação em nuvem, tema cada vez mais presente em concursos públicos e certificações como a AZ-900.</p>
+      <ul>
+        <li><a href="pdfs/computacao-nuvem-introducao.pdf" target="_blank">☁️ Introdução à Computação em Nuvem</a></li>
+        <li><a href="pdfs/servicos-nuvem.pdf" target="_blank">☁️ Serviços: IaaS, PaaS e SaaS</a></li>
+        <li><a href="https://learn.microsoft.com/pt-br/certifications/exams/az-900/" target="_blank">🔗 Guia Oficial da Microsoft (AZ-900)</a></li>
+      </ul>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos Simples em Programação</h2>
+      <p>Veja exemplos práticos de lógica, Python, Java e HTML que podem te ajudar a estudar e praticar programação:</p>
+      <ul>
+        <li><a href="https://github.com/profrenanpalheta/projetos/tree/main/python" target="_blank">🐍 Projetos em Python</a></li>
+        <li><a href="https://github.com/profrenanpalheta/projetos/tree/main/java" target="_blank">☕ Projetos em Java</a></li>
+        <li><a href="https://github.com/profrenanpalheta/projetos/tree/main/web" target="_blank">🌐 Projetos Web</a></li>
+      </ul>
+    </section>
+
     <section id="contato">
       <h2>Fale Comigo</h2>
       <p>Email: prof.renanpalheta@gmail.com</p>
@@ -197,6 +225,11 @@
 
   <footer>
     <p>&copy; 2025 Prof. Renan Palheta - Todos os direitos reservados</p>
+    <p>
+      <a href="#inicio">Início</a> |
+      <a href="#cursos">Cursos</a> |
+      <a href="#contato">Contato</a>
+    </p>
   </footer>
 
   <a href="https://wa.me/5591980736501" class="whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
