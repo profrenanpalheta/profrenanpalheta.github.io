@@ -1,237 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prof. Renan Palheta | Cursos e Conteúdos de Informática</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prof. Renan Palheta | Informática para Concursos</title>
   <style>
-    :root {
-      --azul-engenharia: #003366;
-      --cinza-claro: #f0f0f0;
-      --cinza-escuro: #2e2e2e;
-      --destaque: #007acc;
-      --branco: #ffffff;
-    }
-
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: var(--cinza-claro);
-      color: var(--cinza-escuro);
-      scroll-behavior: smooth;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
     }
-
     header {
-      background-color: var(--azul-engenharia);
-      color: var(--branco);
-      padding: 40px 20px;
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      animation: lightning 3s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes lightning {
-      0% { left: -100%; }
-      50% { left: 100%; }
-      100% { left: 100%; }
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 2;
-    }
-
     nav {
-      background-color: var(--destaque);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      background-color: #002244;
+      text-align: center;
       padding: 10px 0;
     }
-
     nav a {
-      color: var(--branco);
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
-
-    nav a:hover {
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #003366;
+    }
+    .pdf-links a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #0066cc;
+    }
+    .pdf-links a:hover {
       text-decoration: underline;
     }
-
-    main {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background-color: var(--branco);
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in;
+    .hotmart-section {
+      background-color: #fff8dc;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 40px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hotmart-section a {
+      color: #d35400;
+      font-weight: bold;
+      font-size: 1.1em;
     }
-
-    section {
-      margin-bottom: 40px;
-    }
-
     footer {
-      background-color: var(--azul-engenharia);
-      color: var(--branco);
-      text-align: center;
-      padding: 15px;
-    }
-
-    footer a {
-      color: var(--branco);
-      text-decoration: none;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
+      background-color: #003366;
       color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
       text-align: center;
-      line-height: 60px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    .logo {
-      width: 120px;
-      margin: 10px auto;
-      display: block;
+      padding: 20px 0;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-content">
-      <img src="logo_prof.png" alt="Logo Prof. Renan Palheta" class="logo" />
-      <h1>Prof. Renan Palheta</h1>
-      <p>Informática para Concursos Públicos</p>
-    </div>
+    <h1>Prof. Renan Palheta</h1>
+    <p>Informática para Concursos e Cursos Técnicos</p>
   </header>
 
   <nav>
-    <a href="#inicio"><i class="fas fa-home"></i> Início</a>
-    <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
-    <a href="#conteudos"><i class="fas fa-book"></i> Conteúdos</a>
-    <a href="#cursos"><i class="fas fa-video"></i> Cursos Online</a>
-    <a href="#pdfs"><i class="fas fa-file-pdf"></i> PDFs Básicos</a>
-    <a href="#nuvem"><i class="fas fa-cloud"></i> Nuvem</a>
-    <a href="#projetos"><i class="fas fa-code"></i> Projetos</a>
-    <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+    <a href="#informatica-basica">Informática Básica</a>
+    <a href="#material-completo">Material Completo</a>
+    <a href="#projetos">Projetos e Slides</a>
+    <a href="#contato">Contato</a>
   </nav>
 
-  <main>
-    <section id="inicio">
-      <h2>Bem-vindo!</h2>
-      <p>Este é o seu portal de estudos em informática voltado para concursos públicos. Aqui você encontra conteúdos atualizados, resumos, vídeos e muito mais para te ajudar na sua aprovação!</p>
-    </section>
+  <section id="informatica-basica">
+    <h2>Informática Básica (PDFs Gratuitos)</h2>
+    <p>Esses materiais são ideais para quem está iniciando ou se preparando para concursos.</p>
+    <div class="pdf-links">
+      <a href="pdfs/introducao-informatica.pdf" target="_blank">📄 Introdução à Informática</a>
+      <a href="pdfs/sistemas-operacionais.pdf" target="_blank">📄 Noções de Sistemas Operacionais</a>
+      <a href="pdfs/word.pdf" target="_blank">📄 Microsoft Word</a>
+      <a href="pdfs/excel.pdf" target="_blank">📄 Microsoft Excel</a>
+      <a href="pdfs/navegadores-email.pdf" target="_blank">📄 Navegadores e E-mail</a>
+    </div>
+  </section>
 
-    <section id="sobre">
-      <h2>Sobre o Professor</h2>
-      <p>Sou o Prof. Renan Palheta, especialista em informática para concursos. Tenho ajudado centenas de alunos a entenderem com clareza os principais temas cobrados em provas de concursos públicos.</p>
-    </section>
-
-    <section id="conteudos">
-      <h2>Conteúdos em Destaque</h2>
-      <ul>
-        <li>✅ Apostilas e PDFs gratuitos</li>
-        <li>✅ Resumos por assunto</li>
-        <li>✅ Questões comentadas</li>
-        <li>✅ Aulas em vídeo (em breve)</li>
-      </ul>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdEXEMPLO/viewform?embedded=true" title="Formulário de inscrição"></iframe>
-    </section>
-
-    <section id="cursos">
-      <h2>Cursos Online</h2>
-      <p>Em breve você poderá acessar meus cursos completos pela Udemy diretamente por aqui!</p>
-      <p>Enquanto isso, fique atento às atualizações e siga o Instagram para novidades.</p>
-    </section>
-
-    <section id="pdfs">
-      <h2>Informática Básica para Outros Cursos</h2>
-      <p>Estudantes de Administração, Enfermagem, Pedagogia e outras áreas também podem aprender os conceitos básicos de informática com esses materiais gratuitos:</p>
-      <ul>
-        <li><a href="pdfs/introducao-informatica.pdf" target="_blank">📘 Introdução à Informática</a></li>
-        <li><a href="pdfs/sistemas-operacionais-basico.pdf" target="_blank">📘 Noções de Sistemas Operacionais</a></li>
-        <li><a href="pdfs/editor-texto-planilha.pdf" target="_blank">📘 Word e Excel: Conceitos Básicos</a></li>
-        <li><a href="pdfs/navegadores-e-email.pdf" target="_blank">📘 Navegadores e E-mail</a></li>
-      </ul>
-    </section>
-
-    <section id="nuvem">
-      <h2>Computação em Nuvem</h2>
-      <p>Conheça os principais conceitos de computação em nuvem, tema cada vez mais presente em concursos públicos e certificações como a AZ-900.</p>
-      <ul>
-        <li><a href="pdfs/computacao-nuvem-introducao.pdf" target="_blank">☁️ Introdução à Computação em Nuvem</a></li>
-        <li><a href="pdfs/servicos-nuvem.pdf" target="_blank">☁️ Serviços: IaaS, PaaS e SaaS</a></li>
-        <li><a href="https://learn.microsoft.com/pt-br/certifications/exams/az-900/" target="_blank">🔗 Guia Oficial da Microsoft (AZ-900)</a></li>
-      </ul>
-    </section>
-
-    <section id="projetos">
-      <h2>Projetos Simples em Programação</h2>
-      <p>Veja exemplos práticos de lógica, Python, Java e HTML que podem te ajudar a estudar e praticar programação:</p>
-      <ul>
-        <li><a href="https://github.com/profrenanpalheta/projetos/tree/main/python" target="_blank">🐍 Projetos em Python</a></li>
-        <li><a href="https://github.com/profrenanpalheta/projetos/tree/main/java" target="_blank">☕ Projetos em Java</a></li>
-        <li><a href="https://github.com/profrenanpalheta/projetos/tree/main/web" target="_blank">🌐 Projetos Web</a></li>
-      </ul>
-    </section>
-
-    <section id="contato">
-      <h2>Fale Comigo</h2>
-      <p>Email: prof.renanpalheta@gmail.com</p>
-      <p>Instagram: <a href="https://instagram.com/engrpalheta" target="_blank">@engrpalheta</a></p>
-      <p>WhatsApp: <a href="https://wa.me/5591980736501" target="_blank">Clique aqui para conversar</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Prof. Renan Palheta - Todos os direitos reservados</p>
+  <section id="material-completo" class="hotmart-section">
+    <h2>📚 Material Completo (com Certificado)</h2>
+    <p>Se você deseja se aprofundar nos conteúdos de informática e ainda receber certificado, adquira o material completo com bônus exclusivos:</p>
+    <ul>
+      <li>📘 Apostilas completas (PDF)</li>
+      <li>🎥 Vídeo-aulas complementares</li>
+      <li>📜 Certificado de Conclusão</li>
+      <li>🎯 Questões de concursos atualizadas</li>
+    </ul>
     <p>
-      <a href="#inicio">Início</a> |
-      <a href="#cursos">Cursos</a> |
-      <a href="#contato">Contato</a>
+      👉 <a href="https://hotmart.com/seu-link" target="_blank">Clique aqui para acessar o conteúdo completo via Hotmart</a>
     </p>
-  </footer>
+  </section>
 
-  <a href="https://wa.me/5591980736501" class="whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <section id="projetos">
+    <h2>Projetos e Slides</h2>
+    <p>Veja alguns materiais extras para estudo, slides e projetos simples de informática.</p>
+    <div class="pdf-links">
+      <a href="slides/computacao-nuvem.pdf" target="_blank">☁️ Computação em Nuvem</a>
+      <a href="slides/redes-basico.pdf" target="_blank">🌐 Noções de Redes</a>
+      <a href="slides/seguranca-basica.pdf" target="_blank">🔐 Segurança da Informação</a>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <p>Entre em contato: renanpalheta@email.com | Instagram: @eng.rpalheta</p>
+    <p>&copy; 2025 - Prof. Renan Palheta. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
