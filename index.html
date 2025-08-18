@@ -34,27 +34,55 @@
       font-weight: bold;
     }
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
     h2 {
       color: #003366;
+      margin-bottom: 20px;
     }
-    .pdf-links a {
-      display: block;
-      margin: 10px 0;
+
+    /* --- Cards Grid --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
       text-decoration: none;
-      color: #0066cc;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .pdf-links a:hover {
-      text-decoration: underline;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
+    .card img {
+      width: 70px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #0077cc;
+    }
+    .card p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
     .hotmart-section {
       background-color: #fff8dc;
       padding: 20px;
       border: 1px solid #ccc;
       margin-top: 40px;
+      border-radius: 10px;
     }
     .hotmart-section a {
       color: #36c805;
@@ -84,18 +112,40 @@
     <a href="#contato">Contato</a>
   </nav>
 
+  <!-- Informática Básica -->
   <section id="informatica-basica">
     <h2>Informática Básica (PDFs Gratuitos)</h2>
     <p>Esses materiais são ideais para quem está iniciando ou se preparando para concursos.</p>
-    <div class="pdf-links">
-      <a href="pdfs/introducao-informatica.pdf" target="_blank">📄 Introdução à Informática</a>
-      <a href="pdfs/sistemas-operacionais.pdf" target="_blank">📄 Noções de Sistemas Operacionais</a>
-      <a href="pdfs/word.pdf" target="_blank">📄 Microsoft Word</a>
-      <a href="pdfs/excel.pdf" target="_blank">📄 Microsoft Excel</a>
-      <a href="pdfs/navegadores-email.pdf" target="_blank">📄 Navegadores e E-mail</a>
+    <div class="grid">
+      <a href="pdfs/introducao-informatica.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/pdf.png" alt="PDF">
+        <h3>Introdução à Informática</h3>
+        <p>Conceitos básicos de informática.</p>
+      </a>
+      <a href="pdfs/sistemas-operacionais.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/windows-10.png" alt="Sistemas">
+        <h3>Sistemas Operacionais</h3>
+        <p>Noções fundamentais sobre sistemas.</p>
+      </a>
+      <a href="pdfs/word.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/ms-word.png" alt="Word">
+        <h3>Microsoft Word</h3>
+        <p>Ferramentas essenciais de edição.</p>
+      </a>
+      <a href="pdfs/excel.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/ms-excel.png" alt="Excel">
+        <h3>Microsoft Excel</h3>
+        <p>Planilhas, fórmulas e gráficos.</p>
+      </a>
+      <a href="pdfs/navegadores-email.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/internet--v1.png" alt="Internet">
+        <h3>Navegadores e E-mail</h3>
+        <p>Conceitos básicos de web e e-mails.</p>
+      </a>
     </div>
   </section>
 
+  <!-- Material Completo -->
   <section id="material-completo" class="hotmart-section">
     <h2>📚 Material Completo (com Certificado)</h2>
     <p>Se você deseja se aprofundar nos conteúdos de informática e ainda receber certificado, adquira o material completo com bônus exclusivos:</p>
@@ -110,13 +160,26 @@
     </p>
   </section>
 
+  <!-- Projetos -->
   <section id="projetos">
     <h2>Projetos e Slides</h2>
     <p>Veja alguns materiais extras para estudo, slides e projetos simples de informática.</p>
-    <div class="pdf-links">
-      <a href="slides/computacao-nuvem.pdf" target="_blank">☁️ Computação em Nuvem</a>
-      <a href="slides/redes-basico.pdf" target="_blank">🌐 Noções de Redes</a>
-      <a href="slides/seguranca-basica.pdf" target="_blank">🔐 Segurança da Informação</a>
+    <div class="grid">
+      <a href="slides/computacao-nuvem.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/cloud.png" alt="Nuvem">
+        <h3>Computação em Nuvem</h3>
+        <p>Introdução e fundamentos da nuvem.</p>
+      </a>
+      <a href="slides/redes-basico.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/network.png" alt="Redes">
+        <h3>Noções de Redes</h3>
+        <p>Principais conceitos sobre redes.</p>
+      </a>
+      <a href="slides/seguranca-basica.pdf" target="_blank" class="card">
+        <img src="https://img.icons8.com/color/96/privacy.png" alt="Segurança">
+        <h3>Segurança da Informação</h3>
+        <p>Princípios básicos de segurança.</p>
+      </a>
     </div>
   </section>
 
