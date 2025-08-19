@@ -6,139 +6,163 @@
   <title>Prof. Renan Palheta | Informática para Concursos</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: #f4f7fa;
+      color: #2c3e50;
     }
+
+    /* Header com logo maior e destaque */
     header {
-      background: linear-gradient(90deg, #11385C, #1C6EB8);
+      background: linear-gradient(90deg, #1b2a47, #1c6eb8);
       color: white;
-      padding: 30px 0;
+      padding: 40px 0;
       text-align: center;
+      position: relative;
     }
     header img {
-      width: 150px;
-      margin-bottom: 10px;
+      width: 200px;
+      max-width: 90%;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      transition: transform 0.3s;
     }
+    /* Zoom ao passar o mouse */
+    header img:hover {
+      transform: scale(1.1);
+    }
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.2em;
+    }
+    header p {
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
     nav {
-      background-color: #002244;
+      background-color: #112240;
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
     }
     nav a {
-      color: white;
+      color: #ecf0f1;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
+    nav a:hover {
+      color: #1abc9c;
+    }
+
     section {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
     h2 {
-      color: #003366;
-      margin-bottom: 20px;
+      color: #1b2a47;
+      border-bottom: 2px solid #1c6eb8;
+      padding-bottom: 5px;
     }
 
-    /* --- Cards Grid --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Materiais */
+    .pdf-links {
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
+      margin-top: 20px;
     }
-
-    /* --- Cards Interativos --- */
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
+    .pdf-links a {
+      flex: 1 1 150px;
       text-align: center;
       text-decoration: none;
-      color: #333;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+      color: #0066cc;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #e0f0ff;
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, rgba(0,119,204,0.3), rgba(54,200,5,0.3), rgba(255,165,0,0.3));
-      opacity: 0;
-      transition: opacity 0.4s, transform 0.4s;
-      z-index: 0;
-      transform: rotate(45deg) scale(0.5);
-    }
-
-    .card:hover::before {
-      opacity: 1;
-      transform: rotate(45deg) scale(1);
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.08) rotate(-2deg);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-      filter: brightness(1.05);
-      z-index: 1;
-    }
-
-    .card img {
-      width: 70px;
-      margin-bottom: 15px;
-      transition: transform 0.3s, filter 0.3s;
-      position: relative;
-      z-index: 1;
-    }
-
-    .card:hover img {
-      transform: scale(1.3) rotate(15deg);
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      color: #0077cc;
-      position: relative;
-      z-index: 1;
-    }
-
-    .card p {
-      font-size: 0.9em;
-      color: #555;
-      position: relative;
-      z-index: 1;
+    .pdf-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      background-color: #d0e7ff;
     }
 
     .hotmart-section {
       background-color: #fff8dc;
-      padding: 20px;
+      padding: 25px;
       border: 1px solid #ccc;
       margin-top: 40px;
       border-radius: 10px;
     }
-
     .hotmart-section a {
       color: #36c805;
       font-weight: bold;
       font-size: 1.1em;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .hotmart-section a:hover {
+      color: #2b8a00;
+    }
+
+    /* Projetos */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .project-box {
+      flex: 1 1 250px;
+      text-align: center;
+      text-decoration: none;
+      color: #2c3e50;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f0f8ff;
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    }
+    .project-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      background-color: #d9efff;
+    }
+    .project-box strong {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 1.15em;
     }
 
     footer {
-      background: linear-gradient(90deg, #11385C, #1C6EB8);
+      background: linear-gradient(90deg, #1b2a47, #1c6eb8);
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 25px 0;
       margin-top: 60px;
+    }
+
+    @media(max-width:600px){
+      .pdf-links, .projects-container {
+        flex-direction: column;
+      }
+      header img {
+        width: 150px;
+      }
     }
   </style>
 </head>
@@ -156,45 +180,18 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <!-- Informática Básica -->
   <section id="informatica-basica">
     <h2>Informática Básica (PDFs Gratuitos)</h2>
     <p>Esses materiais são ideais para quem está iniciando ou se preparando para concursos.</p>
-    <div class="grid">
-      <a href="pdfs/introducao-informatica.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/pdf.png" alt="PDF">
-        <h3>Introdução à Informática</h3>
-        <p>Conceitos básicos de informática.</p>
-      </a>
-      <a href="pdfs/sistemas-operacionais.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/windows-10.png" alt="Sistemas">
-        <h3>Sistemas Operacionais</h3>
-        <p>Noções fundamentais sobre sistemas.</p>
-      </a>
-      <a href="pdfs/pacote-office.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/microsoft-office-2019.png" alt="Pacote Office">
-        <h3>Pacote Office</h3>
-        <p>Word, Excel, PowerPoint e demais ferramentas.</p>
-      </a>
-      <a href="pdfs/internet-redes.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/network.png" alt="Internet e Redes">
-        <h3>Internet e Redes de Computadores</h3>
-        <p>Conceitos básicos de conectividade e redes.</p>
-      </a>
-      <a href="pdfs/linux.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/linux.png" alt="Linux">
-        <h3>Linux</h3>
-        <p>Noções básicas do sistema Linux e comandos essenciais.</p>
-      </a>
-      <a href="pdfs/seguranca-informatica.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/privacy.png" alt="Segurança">
-        <h3>Segurança da Informação</h3>
-        <p>Princípios fundamentais de segurança digital.</p>
-      </a>
+    <div class="pdf-links">
+      <a href="pdfs/introducao-informatica.pdf" target="_blank">📄<br>Introdução à Informática</a>
+      <a href="pdfs/pacote-office.pdf" target="_blank">💻<br>Pacote Office</a>
+      <a href="pdfs/internet-redes.pdf" target="_blank">🌐<br>Internet e Redes de Computadores</a>
+      <a href="pdfs/linux.pdf" target="_blank">🐧<br>Linux</a>
+      <a href="pdfs/seguranca.pdf" target="_blank">🔐<br>Segurança da Informação</a>
     </div>
   </section>
 
-  <!-- Material Completo -->
   <section id="material-completo" class="hotmart-section">
     <h2>📚 Material Completo (com Certificado)</h2>
     <p>Se você deseja se aprofundar nos conteúdos de informática e ainda receber certificado, adquira o material completo com bônus exclusivos:</p>
@@ -209,31 +206,30 @@
     </p>
   </section>
 
-  <!-- Projetos -->
   <section id="projetos">
     <h2>Projetos e Slides</h2>
-    <p>Veja alguns materiais extras para estudo, slides e projetos simples de informática.</p>
-    <div class="grid">
-      <a href="slides/computacao-nuvem.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/cloud.png" alt="Nuvem">
-        <h3>Computação em Nuvem</h3>
-        <p>Introdução e fundamentos da nuvem.</p>
+    <p>Confira alguns projetos avançados que demonstram minhas habilidades em engenharia e ensino de informática:</p>
+    <div class="projects-container">
+      <a href="projetos/dashboard-dados.pdf" target="_blank" class="project-box">
+        📊
+        <strong>Dashboard Interativo de Dados</strong>
+        Visualização de métricas e relatórios de forma interativa.
       </a>
-      <a href="slides/redes-basico.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/network.png" alt="Redes">
-        <h3>Noções de Redes</h3>
-        <p>Principais conceitos sobre redes.</p>
+      <a href="projetos/sistema-controle-alunos.pdf" target="_blank" class="project-box">
+        🗄️
+        <strong>Sistema de Controle de Alunos</strong>
+        Aplicação web para gerenciar alunos, cursos e materiais didáticos.
       </a>
-      <a href="slides/seguranca-basica.pdf" target="_blank" class="card">
-        <img src="https://img.icons8.com/color/96/privacy.png" alt="Segurança">
-        <h3>Segurança da Informação</h3>
-        <p>Princípios básicos de segurança.</p>
+      <a href="projetos/chatbot-educacional.pdf" target="_blank" class="project-box">
+        🤖💬
+        <strong>Chatbot Educacional</strong>
+        Assistente virtual para auxiliar alunos em revisões e dúvidas.
       </a>
     </div>
   </section>
 
   <footer id="contato">
-    <p>Entre em contato: prof.renanpalheta@gmail.com | Instagram: @eng.rpalheta</p>
+    <p>Entre em contato: prof.renanpalheta@gmail.com | Instagram: @engrpalheta</p>
     <p>&copy; 2025 - Prof. Renan Palheta. Todos os direitos reservados.</p>
   </footer>
 </body>
