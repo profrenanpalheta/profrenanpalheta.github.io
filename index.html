@@ -3,233 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prof. Renan Palheta | Informática para Concursos</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <title>Prof. Renan Palheta | Engenheiro de Computação & Educador</title>
+  <meta name="description" content="Portfólio de Renan Palheta: Professor de Informática, Engenheiro de Computação e Desenvolvedor focado em Salesforce e Web.">
+  <meta property="og:title" content="Prof. Renan Palheta | Engenheiro & Educador">
+  <meta property="og:description" content="Materiais didáticos, cursos e projetos de engenharia.">
+  <meta property="og:image" content="LOGO_PROF.png">
+  <meta property="og:url" content="https://profrenanpalheta.github.io/">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
+    :root {
+      --primary: #1b2a47;
+      --secondary: #1c6eb8;
+      --accent: #1abc9c;
+      --light: #f4f7fa;
+      --dark-blue: #112240;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f7fa;
+      background-color: var(--light);
       color: #2c3e50;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(90deg, #1b2a47, #1c6eb8);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 40px 0;
+      padding: 60px 20px;
       text-align: center;
     }
+    
     header img {
-      width: 200px;
-      max-width: 90%;
-      margin-bottom: 15px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      opacity: 0;
-      animation: fadeIn 2s forwards;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%; /* Formato circular para perfil profissional */
+      border: 4px solid rgba(255,255,255,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease-out;
     }
-    header h1 { margin: 10px 0 5px; font-size: 2.2em; }
-    header p { font-size: 1.2em; font-weight: 500; }
 
-    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    header h1 { margin: 15px 0 5px; font-size: 2.5rem; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
 
     nav {
-      background-color: #112240;
+      background-color: var(--dark-blue);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 15px 0;
       text-align: center;
-      padding: 12px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
     nav a {
       color: #ecf0f1;
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
     }
-    nav a:hover { color: #1abc9c; }
+    nav a:hover { color: var(--accent); }
 
-    section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-    h2 { color: #1b2a47; border-bottom: 2px solid #1c6eb8; padding-bottom: 5px; }
+    section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+    h2 { color: var(--primary); border-left: 5px solid var(--secondary); padding-left: 15px; margin-bottom: 30px; }
 
-    /* PDFs */
+    /* Grid de PDFs (Estilo botões) */
     .pdf-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
     }
     .pdf-links a {
-      flex: 1 1 150px;
       text-align: center;
       text-decoration: none;
-      color: #0066cc;
-      border: 1px solid #ccc;
-      padding: 15px;
-      border-radius: 10px;
-      background-color: #e0f0ff;
-      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-      font-size: 1.1em;
+      color: var(--primary);
+      border: 1px solid #d1d9e6;
+      padding: 20px;
+      border-radius: 12px;
+      background: white;
+      transition: all 0.3s ease;
     }
     .pdf-links a:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,102,204,0.4);
-      background-color: #d0e7ff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-color: var(--secondary);
     }
-    .pdf-links i {
-      font-size: 2em;
-      margin-bottom: 8px;
-      color: #1c6eb8;
-      transition: transform 0.3s;
+    .pdf-links i { font-size: 1.8rem; color: var(--secondary); margin-bottom: 10px; display: block; }
+
+    /* Cards de Projetos (Estilo Portfólio Tech) */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
-    .pdf-links a:hover i {
-      transform: scale(1.3);
+    .project-box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #eee;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-box:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+    .project-box i { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
+    .project-box strong { font-size: 1.25rem; display: block; margin-bottom: 10px; }
+    .project-box p { font-size: 0.95rem; color: #666; flex-grow: 1; }
+    
+    .tech-badges { margin: 15px 0; }
+    .badge {
+      background: #eef2f7;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .repo-link {
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .hotmart-section {
-      background-color: #fff8dc;
-      padding: 25px;
-      border: 1px solid #ccc;
-      margin-top: 40px;
-      border-radius: 10px;
-    }
-    .hotmart-section a {
-      color: #36c805;
-      font-weight: bold;
-      font-size: 1.1em;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .hotmart-section a:hover { color: #2b8a00; }
-
-    /* Projetos */
-    .projects-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .project-box {
-      flex: 1 1 250px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      border: 2px dashed #36c805;
       text-align: center;
+    }
+    .btn-hotmart {
+      background: #36c805;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
       text-decoration: none;
-      color: #2c3e50;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 12px;
-      background-color: #f0f8ff;
-      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-      font-size: 1em;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: 0.3s;
     }
-    .project-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0,102,204,0.5);
-      background-color: #d9efff;
-    }
-    .project-box i {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      color: #1c6eb8;
-      transition: transform 0.3s;
-    }
-    .project-box:hover i {
-      transform: scale(1.3) rotate(10deg);
-    }
-    .project-box strong {
-      display: block;
-      margin: 10px 0 5px;
-      font-size: 1.15em;
-    }
+    .btn-hotmart:hover { background: #2b8a00; transform: scale(1.05); }
 
     footer {
-      background: linear-gradient(90deg, #1b2a47, #1c6eb8);
+      background: var(--primary);
       color: white;
       text-align: center;
-      padding: 25px 0;
-      margin-top: 60px;
+      padding: 40px 20px;
+      margin-top: 80px;
     }
 
     @media(max-width:600px){
-      .pdf-links, .projects-container { flex-direction: column; }
-      header img { width: 150px; }
+      header h1 { font-size: 1.8rem; }
+      nav a { margin: 0 8px; font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="LOGO_PROF.png" alt="Logo Prof. Renan Palheta" />
+    <img src="LOGO_PROF.png" alt="Foto de Renan Palheta" loading="lazy">
     <h1>Prof. Renan Palheta</h1>
-    <p>Informática para Concursos e Cursos Técnicos</p>
+    <p>Engenheiro de Computação | Especialista em Informática para Concursos</p>
   </header>
 
   <nav>
-    <a href="#informatica-basica">Informática Básica</a>
-    <a href="#material-completo">Material Completo</a>
-    <a href="#projetos">Projetos e Slides</a>
+    <a href="#materiais">Materiais</a>
+    <a href="#projetos">Portfólio Tech</a>
+    <a href="#curso">Curso Completo</a>
     <a href="#contato">Contato</a>
   </nav>
 
-  <section id="informatica-basica">
-    <h2>Informática Básica (PDFs Gratuitos)</h2>
-    <p>Esses materiais são ideais para quem está iniciando ou se preparando para concursos.</p>
+  <section id="materiais">
+    <h2><i class="fas fa-book-open"></i> Materiais Gratuitos</h2>
     <div class="pdf-links">
       <a href="pdfs/introducao-informatica.pdf" target="_blank">
-        <i class="fas fa-file-alt"></i><br>Introdução à Informática
+        <i class="fas fa-file-alt"></i>Introdução
       </a>
       <a href="pdfs/pacote-office.pdf" target="_blank">
-        <i class="fas fa-laptop"></i><br>Pacote Office
-      </a>
-      <a href="pdfs/internet-redes.pdf" target="_blank">
-        <i class="fas fa-network-wired"></i><br>Internet e Redes de Computadores
+        <i class="fas fa-file-excel"></i>Pacote Office
       </a>
       <a href="pdfs/linux.pdf" target="_blank">
-        <i class="fab fa-linux"></i><br>Linux
+        <i class="fab fa-linux"></i>Sistemas Linux
       </a>
       <a href="pdfs/seguranca.pdf" target="_blank">
-        <i class="fas fa-lock"></i><br>Segurança da Informação
+        <i class="fas fa-shield-alt"></i>Segurança
       </a>
     </div>
-  </section>
-
-  <section id="material-completo" class="hotmart-section">
-    <h2>📚 Material Completo (com Certificado)</h2>
-    <p>Se você deseja se aprofundar nos conteúdos de informática e ainda receber certificado, adquira o material completo com bônus exclusivos:</p>
-    <ul>
-      <li>📘 Apostilas completas (PDF)</li>
-      <li>🎥 Vídeo-aulas complementares</li>
-      <li>📜 Certificado de Conclusão</li>
-      <li>🎯 Questões de concursos atualizadas</li>
-    </ul>
-    <p>
-      👉 <a href="https://hotmart.com/seu-link" target="_blank">Clique aqui para acessar o conteúdo completo via Hotmart</a>
-    </p>
   </section>
 
   <section id="projetos">
-    <h2>Projetos e Slides</h2>
-    <p>Confira alguns projetos avançados que demonstram minhas habilidades em engenharia e ensino de informática:</p>
+    <h2><i class="fas fa-code"></i> Portfólio de Engenharia & Dev</h2>
     <div class="projects-container">
-      <a href="projetos/dashboard-dados.pdf" target="_blank" class="project-box">
-        <i class="fas fa-chart-bar"></i>
-        <strong>Dashboard Interativo de Dados</strong>
-        Visualização de métricas e relatórios de forma interativa.
-      </a>
-      <a href="projetos/sistema-controle-alunos.pdf" target="_blank" class="project-box">
-        <i class="fas fa-database"></i>
-        <strong>Sistema de Controle de Alunos</strong>
-        Aplicação web para gerenciar alunos, cursos e materiais didáticos.
-      </a>
-      <a href="projetos/chatbot-educacional.pdf" target="_blank" class="project-box">
+      
+      <div class="project-box">
+        <i class="fab fa-salesforce"></i>
+        <strong>Salesforce CRM Implementation</strong>
+        <p>Desenvolvimento de fluxos automáticos e customização de objetos para gestão de alunos.</p>
+        <div class="tech-badges">
+          <span class="badge">Apex</span>
+          <span class="badge">LWC</span>
+          <span class="badge">Sales Cloud</span>
+        </div>
+        <a href="#" class="repo-link"><i class="fab fa-github"></i> Ver repositório</a>
+      </div>
+
+      <div class="project-box">
+        <i class="fas fa-microchip"></i>
+        <strong>Smartwatch AI Monitor</strong>
+        <p>Interface para monitoramento biológico em tempo real utilizando sensores e IA interativa.</p>
+        <div class="tech-badges">
+          <span class="badge">Python</span>
+          <span class="badge">React</span>
+          <span class="badge">IoT</span>
+        </div>
+        <a href="#" class="repo-link"><i class="fab fa-github"></i> Ver repositório</a>
+      </div>
+
+      <div class="project-box">
         <i class="fas fa-robot"></i>
-        <strong>Chatbot Educacional</strong>
-        Assistente virtual para auxiliar alunos em revisões e dúvidas.
-      </a>
+        <strong>Bot Educacional</strong>
+        <p>Chatbot integrado para resolução de dúvidas e suporte a alunos de cursos técnicos.</p>
+        <div class="tech-badges">
+          <span class="badge">Node.js</span>
+          <span class="badge">API</span>
+        </div>
+        <a href="#" class="repo-link"><i class="fab fa-github"></i> Ver repositório</a>
+      </div>
+
     </div>
   </section>
 
+  <section id="curso" class="hotmart-section">
+    <h2>🚀 Prepare-se com o Melhor Conteúdo</h2>
+    <p>Acesso vitalício, certificado de conclusão e banco de questões atualizado para concursos.</p>
+    <a href="https://hotmart.com/seu-link" class="btn-hotmart" target="_blank">ACESSAR MATERIAL COMPLETO</a>
+  </section>
+
   <footer id="contato">
-    <p>Entre em contato: prof.renanpalheta@gmail.com | Instagram: @engrpalheta</p>
-    <p>&copy; 2025 - Prof. Renan Palheta. Todos os direitos reservados.</p>
+    <div style="margin-bottom: 20px;">
+      <a href="mailto:prof.renanpalheta@gmail.com" style="color:white; margin: 0 10px;"><i class="fas fa-envelope fa-lg"></i></a>
+      <a href="https://instagram.com/engrpalheta" style="color:white; margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" style="color:white; margin: 0 10px;"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+    <p>&copy; 2026 - Renan Palheta. Engenharia e Educação.</p>
   </footer>
+
 </body>
 </html>
