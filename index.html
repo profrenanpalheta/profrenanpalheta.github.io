@@ -78,7 +78,6 @@
       gap: 10px;
     }
 
-    /* Grid de Cards */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -99,7 +98,6 @@
     .card strong { font-size: 1.2rem; display: block; margin-bottom: 10px; color: var(--primary); }
     .card p { font-size: 0.95rem; color: #555; flex-grow: 1; }
 
-    /* Badges Técnicas */
     .tech-badges { margin: 15px 0; }
     .badge {
       background: #eef2f7;
@@ -119,10 +117,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 15px;
+      margin-top: 10px;
+      transition: color 0.2s;
     }
+    .link-action:hover { color: var(--accent); }
 
-    /* Destaque Mestrado */
     .card.mestrado-focus {
       border: 2px solid var(--secondary);
       background: linear-gradient(to bottom right, #ffffff, #f0f7ff);
@@ -138,70 +137,4 @@
     .btn-hotmart {
       background: var(--success);
       color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-      transition: 0.3s;
-    }
-
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      margin-top: 80px;
-    }
-
-    @media(max-width:600px){
-      header h1 { font-size: 1.8rem; }
-      nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-      nav a { margin: 5px; }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="LOGO_PROF.png" alt="Foto Prof. Renan Palheta" loading="lazy">
-    <h1>Renan Palheta</h1>
-    <p>Engenheiro de Computação | Mestre em Potencial | Professor de Informática para Concursos</p>
-  </header>
-
-  <nav>
-    <a href="#educacional">Educação</a>
-    <a href="#engenharia">Engenharia & Pesquisa</a>
-    <a href="#material">Curso Completo</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
-  <section id="educacional">
-    <h2><i class="fas fa-graduation-cap"></i> Projetos Educacionais</h2>
-    <div class="grid-container">
-      
-      <div class="card">
-        <i class="fas fa-file-pdf"></i>
-        <strong>Material Gratuito (PDF)</strong>
-        <p>Apostilas de Introdução à Informática, Redes e Segurança para concurseiros.</p>
-        <a href="pdfs/material-basico.pdf" class="link-action" target="_blank">Acessar Arquivos</a>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-chalkboard"></i>
-        <strong>Sistema de Controle de Alunos</strong>
-        <p>Aplicação para gestão de turmas e acompanhamento de desempenho escolar.</p>
-        <div class="tech-badges">
-          <span class="badge">Excel Avançado</span>
-          <span class="badge">VBA</span>
-        </div>
-        <a href="#" class="link-action">Ver Detalhes</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="engenharia">
-    <h2><i class="fas fa-microchip"></i> Pesquisa & Engenharia</h2>
-    <div class="grid-container">
+      padding:
