@@ -273,7 +273,7 @@
 
     .grid-certificados {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       gap: 15px;
       justify-content: center;
     }
@@ -324,7 +324,7 @@
     }
 
     .badge-cert::after {
-      content: "Baixar PDF";
+      content: "Ver PDF";
       position: absolute;
       bottom: -25px;
       background: var(--dark-blue);
@@ -342,6 +342,22 @@
     .badge-cert:hover::after {
       opacity: 1;
       bottom: -20px;
+    }
+
+    .badge-cert.cert-multi::after {
+      content: "Ver 9 Certificados";
+    }
+
+    .badge-count {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: var(--accent);
+      color: var(--dark-blue);
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 10px;
     }
 
     .instituicoes-logos {
@@ -380,6 +396,148 @@
 
     .badge-cert.em-andamento::after {
       display: none;
+    }
+
+    /* ==========================================================================
+       MODAL DE CERTIFICADOS NEO4J
+       ========================================================================== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 21, 40, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .modal-card {
+      background: #0f1c33;
+      color: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 760px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(26, 188, 156, 0.3);
+      overflow: hidden;
+      animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: #8892b0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .close-btn:hover { color: #fff; }
+
+    .modal-body {
+      padding: 20px 25px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .modal-cert-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      transition: all 0.2s;
+    }
+
+    .modal-cert-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(26, 188, 156, 0.4);
+    }
+
+    .modal-cert-item.featured {
+      background: rgba(26, 188, 156, 0.08);
+      border-color: var(--accent);
+    }
+
+    .modal-cert-info {
+      flex: 1;
+    }
+
+    .modal-cert-info h4 {
+      margin: 0 0 5px;
+      font-size: 0.98rem;
+      color: #f1f5f9;
+    }
+
+    .modal-cert-info p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .modal-cert-info code {
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    .btn-download-pdf {
+      background: var(--accent);
+      color: var(--dark-blue);
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn-download-pdf:hover {
+      background: #17a589;
+      transform: translateY(-2px);
     }
 
     .hotmart-box {
@@ -422,6 +580,8 @@
       .about-highlights { justify-content: center; }
       .grid-container { grid-template-columns: 1fr; }
       .painel-contadores { flex-direction: column; gap: 15px; }
+      .modal-cert-item { flex-direction: column; align-items: flex-start; }
+      .btn-download-pdf { width: 100%; justify-content: center; box-sizing: border-box; }
     }
   </style>
 </head>
@@ -455,7 +615,7 @@
           <h3>Olá, eu sou o Renan!</h3>
           <p>
             Sou <strong>Engenheiro de Computação</strong> e <strong>Professor</strong>, apaixonado por transformar tecnologia em conhecimento acessível. 
-            Minha trajetória une o rigor técnico da engenharia com a didática necessária para aprovação in concursos públicos.
+            Minha trajetória une o rigor técnico da engenharia com a didática necessária para aprovação em concursos públicos.
           </p>
           <p>
             Atualmente morando em Uberlândia, foco minha pesquisa de mestrado em <strong>Inteligência Artificial e análise de dados complexos com Neo4j</strong>, explorando o potencial de bancos de dados em grafos para segurança e IoT.
@@ -554,11 +714,11 @@
       
       <div class="painel-contadores">
         <div class="contador-item">
-          <h3>60+</h3>
+          <h3>70+</h3>
           <p>Horas de Cursos</p>
         </div>
         <div class="contador-item">
-          <h3>CISCO / AWS</h3>
+          <h3>Neo4j / CISCO</h3>
           <p>Core Focus</p>
         </div>
         <div class="contador-item">
@@ -569,11 +729,18 @@
 
       <div class="grid-certificados">
         
-        
-        <a href="certificados/ccna_introduction_to_networks_cisco.pdf" download="CCNA_Introduction_to_Networks_Cisco" class="badge-cert">
-  <i class="fas fa-network-wired cert-icon"></i>
-  <span>Cisco CCNA: Intro to Networks</span>
-</a>
+        <!-- Cisco CCNA -->
+        <a href="certificados/CCNA%20Routing%20and%20Switching:%20Introdu%C3%A7%C3%A3o%20a%20Redes.pdf" target="_blank" class="badge-cert">
+          <i class="fas fa-network-wired cert-icon"></i>
+          <span>Cisco CCNA: Intro to Networks</span>
+        </a>
+
+        <!-- Neo4j Cursos & Modulos (Abre o Modal) -->
+        <div class="badge-cert cert-multi" onclick="openNeo4jModal()" title="Clique para ver todos os certificados Neo4j">
+          <span class="badge-count">9</span>
+          <i class="fas fa-project-diagram cert-icon" style="color: var(--accent);"></i>
+          <span>Neo4j: Análise de Grafos</span>
+        </div>
         
         <div class="badge-cert em-andamento" title="Curso em andamento">
           <i class="fab fa-aws cert-icon"></i>
@@ -588,11 +755,6 @@
         <div class="badge-cert em-andamento" title="Curso em andamento">
           <i class="fab fa-python cert-icon"></i>
           <span>Python Data Science</span>
-        </div>
-
-        <div class="badge-cert em-andamento" title="Curso em andamento">
-          <i class="fas fa-database cert-icon"></i>
-          <span>Neo4j Graph Academy</span>
         </div>
 
         <div class="badge-cert em-andamento" title="Curso em andamento">
@@ -611,6 +773,112 @@
     </div>
   </section>
 
+  <!-- MODAL DE CERTIFICADOS NEO4J -->
+  <div id="neo4jModal" class="modal-overlay" onclick="closeNeo4jModal(event)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fas fa-project-diagram"></i> Neo4j: Análise de Dados com Grafos</h3>
+        <button class="close-btn" onclick="toggleModal(false)">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Módulo Completo -->
+        <div class="modal-cert-item featured">
+          <div class="modal-cert-info">
+            <h4>Fundamentos de Neo4j (Módulo Completo)</h4>
+            <p>7 Horas[cite: 3] • Concluído em 29/06/2026[cite: 3] • Validação: <code>33AXTUNI</code>[cite: 3]</p>
+          </div>
+          <a href="certificados/FUNDAMENTOS%20DE%20NEO4J.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <!-- Cursos Individuais -->
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Introdução a Graph Database e Neo4j</h4>
+            <p>1 Hora[cite: 5] • Concluído em 23/01/2026[cite: 5] • Validação: <code>JH7EIWN</code>[cite: 5]</p>
+          </div>
+          <a href="certificados/INTRODU%C3%87%C3%83O%20AO%20GRAPH%20DATABASE.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Instalando Ambiente Neo4j Desktop</h4>
+            <p>1 Hora[cite: 1] • Concluído em 29/01/2026[cite: 1] • Validação: <code>SPQRB5G9</code>[cite: 1]</p>
+          </div>
+          <a href="certificados/AMBIENTE%20NEO4J.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Visualização de Dados no Neo4j Browser</h4>
+            <p>1 Hora[cite: 9] • Concluído em 30/01/2026[cite: 9] • Validação: <code>LEHLRCW2</code>[cite: 9]</p>
+          </div>
+          <a href="certificados/VISUALIZA%C3%87%C3%83O%20DE%20DADOS%20NEO4J.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Como Se Preparar para Certificação Neo4j Certified Professional</h4>
+            <p>1 Hora[cite: 7] • Concluído em 30/01/2026[cite: 7] • Validação: <code>DEQOBEZB</code>[cite: 7]</p>
+          </div>
+          <a href="certificados/PREPARA%C3%87%C3%83O%20PARA%20CERTIFICA%C3%87%C3%83O%20NEO4J.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Preparatório para a Certificação Neo4j (Módulo)</h4>
+            <p>1 Hora[cite: 8] • Concluído em 30/01/2026[cite: 8] • Validação: <code>N1JM1IKT</code>[cite: 8]</p>
+          </div>
+          <a href="certificados/PREPARAT%C3%93RIO%20PARA%20CERTIFICA%C3%87%C3%83O.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Boas Práticas de Modelagem Orientada a Grafos</h4>
+            <p>1 Hora[cite: 2] • Concluído em 11/05/2026[cite: 2] • Validação: <code>ACQ4DUJW</code>[cite: 2]</p>
+          </div>
+          <a href="certificados/BOAS%20PR%C3%81TICAS%20DE%20MODELAGEM%20ORIENTADA%20A%20GRAFOS.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Modelagem de Dados em Grafos de um Serviço de Streaming</h4>
+            <p>2 Horas[cite: 6] • Concluído em 29/06/2026[cite: 6] • Validação: <code>CFKKEB58</code>[cite: 6]</p>
+          </div>
+          <a href="certificados/MODELAGEM%20DE%20DADOS%20EM%20GRAPHOS.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+        <div class="modal-cert-item">
+          <div class="modal-cert-info">
+            <h4>Introdução a Linguagem de Consulta Cypher</h4>
+            <p>1 Hora[cite: 4] • Concluído em 18/07/2026[cite: 4] • Validação: <code>O9EVS7IC</code>[cite: 4]</p>
+          </div>
+          <a href="certificados/INTRODU%C3%87%C3%83O%20A%20LINGUAGEM%20CYPHER.pdf" target="_blank" class="btn-download-pdf">
+            <i class="fas fa-file-pdf"></i> Abrir PDF
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <section id="material" class="hotmart-box">
     <h2>🚀 Domine a Informática de Vez</h2>
     <p>Curso completo do zero ao avançado focado em aprovação.</p>
@@ -626,6 +894,30 @@
     </div>
     <p>&copy; 2026 - Renan Palheta. Engenharia da Computação e Educação.</p>
   </footer>
+
+  <script>
+    function openNeo4jModal() {
+      document.getElementById('neo4jModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNeo4jModal(event) {
+      if (event.target.id === 'neo4jModal') {
+        toggleModal(false);
+      }
+    }
+
+    function toggleModal(open) {
+      document.getElementById('neo4jModal').style.display = open ? 'flex' : 'none';
+      document.body.style.overflow = open ? 'hidden' : 'auto';
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        toggleModal(false);
+      }
+    });
+  </script>
 
 </body>
 </html>
