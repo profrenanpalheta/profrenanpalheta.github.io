@@ -126,7 +126,7 @@
         { "letra": "e", "texto": "Número ( 5 )" }
       ],
       "resposta_correta": "c",
-      "comentario": "O Windows proíbe o uso de barras (/ ou \\), dois pontos, asterisco, aspas e sinais de maior ou menor nos nomes dos arquivos."
+      "comentario": "O Windows proíbe o uso de barras (/ ou \\\\), dois pontos, asterisco, aspas e sinais de maior ou menor nos nomes dos arquivos."
     },
     {
       "id": 8,
@@ -213,7 +213,7 @@
         { "letra": "b", "texto": "Barra de Tarefas" },
         { "letra": "c", "texto": "Explorador de Arquivos" },
         { "letra": "d", "texto": "Painel de Controle" },
-        { "letra": "e", "menu-favoritos": "Menu de Favoritos" }
+        { "letra": "e", "texto": "Menu de Favoritos" }
       ],
       "resposta_correta": "b",
       "comentario": "A Barra de Tarefas fica localizada por padrão na margem inferior da tela e gerencia os atalhos e relógio do sistema."
@@ -625,7 +625,7 @@
       "alternativas": [
         { "letra": "a", "texto": "Barra de Ferramentas" },
         { "letra": "b", "texto": "Histórico" },
-        { "letra": "c", "text": "Lixeira" },
+        { "letra": "c", "texto": "Lixeira" },
         { "letra": "d", "texto": "Modo Anónimo" },
         { "letra": "e", "texto": "Painel de Controle" }
       ],
@@ -1475,7 +1475,7 @@
         { "letra": "d", "texto": "Barramentos" },
         { "letra": "e", "texto": "Gabinetes" }
       ],
-      "resposta_correta": "b",
+      "resposta_correta": "c",
       "comentario": "Software representa a parte lógica do computador, composta pelos programas, rotinas e códigos de execução."
     },
     {
@@ -1494,7 +1494,7 @@
         { "letra": "e", "texto": "Gabinete" }
       ],
       "resposta_correta": "c",
-      "comentario": "O Processador (CPU) é a Unidade Central de Processamento, responsible por executar as instruções e cálculos de dados do sistema."
+      "comentario": "O Processador (CPU) é a Unidade Central de Processamento, responsável por executar as instruções e cálculos de dados do sistema."
     },
     {
       "id": 84,
@@ -1688,7 +1688,8 @@
         { "letra": "a", "texto": "Estabilizador" },
         { "letra": "b", "texto": "Nobreak" },
         { "letra": "c", "texto": "Cooler" },
-        { "letra": "d", "texto": "Placa de Som" }
+        { "letra": "d", "texto": "Placa de Som" },
+        { "letra": "e", "texto": "Disco Rígido" }
       ],
       "resposta_correta": "c",
       "comentario": "O Cooler é o sistema de ventilação ativa responsável por dissipar o calor gerado pelo processador durante o uso."
@@ -1764,6 +1765,24 @@
       ],
       "resposta_correta": "c",
       "comentario": "O Scanner faz a digitalização de imagens e documentos físicos, enviando o arquivo digital resultante para a CPU."
+    },
+    {
+      "id": 99,
+      "disciplina": "Hardware e Software",
+      "banca": "Avançar",
+      "orgao": "Geral",
+      "cargo": "Nível Fundamental",
+      "tipo": "multipla_escolha",
+      "enunciado": "Qual dispositivo de proteção elétrica possui uma bateria interna capaz de manter o computador ligado por algum tempo mesmo após a queda total da energia elétrica da rede?",
+      "alternativas": [
+        { "letra": "a", "texto": "Estabilizador" },
+        { "letra": "b", "texto": "Filtro de linha" },
+        { "letra": "c", "texto": "Nobreak (UPS)" },
+        { "letra": "d", "texto": "Cooler" },
+        { "letra": "e", "texto": "Fonte de Alimentação" }
+      ],
+      "resposta_correta": "c",
+      "comentario": "O Nobreak (UPS) armazena energia em uma bateria interna, garantindo autonomia temporária quando ocorre uma falta de luz."
     },
     {
       "id": 100,
